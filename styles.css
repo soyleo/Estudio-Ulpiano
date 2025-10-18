@@ -1,3 +1,91 @@
+:root {
+  /* Colores primarios de la marca */
+  --color-primario: #024d9c;
+  --color-secundario: #f5f5f5;
+  --color-acento: #c59401;
+  
+  
+  
+  /* Colores de texto y fondo */
+  --color-texto-oscuro: #212529; /* (Se usaría para textos en fondos claros) */
+  --color-texto-claro: #f8f9fa;  /* Usaremos este en el fondo azul oscuro */
+  
+  /* 🎨 ¡Fondo principal actualizado a AZUL OSCURO! 🎨 */
+  --color-fondo-principal: #022041; /* Azul medianoche o similar */
+  
+  --color-fondo-secundario: #2e4063; /* Un azul un poco más claro para contraste */
+  
+  /* Colores neutrales (escala de grises) */
+  --gris-claro: #f8f9fa;
+  --gris-medio: #adb5bd;
+  --gris-oscuro: #495057;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+body {
+  /* Aplicamos el azul oscuro */
+  background-color: var(--color-fondo-principal); 
+  
+  /* El color del texto debe ser claro para que contraste */
+  color: var(--color-texto-claro); 
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+ul{
+    list-style: none;
+}
+.checklist{
+    list-style: inside;
+    list-style-type: disc;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 5px;
+    
+    /* Color de Acento Dorado (o verde WhatsApp: #25D366) */
+    background-color: var(--color-secundario); 
+    
+    color: var(--color-fondo-principal); /* El texto será blanco o blanco roto */
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50%; /* Bordes redondeados para modernidad */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.whatsapp-button:hover {
+    /* Oscurecer el dorado o el verde al pasar el mouse */
+    background-color: #A38445; 
+    transform: translateY(-2px);
+}
+
+.whatsapp-button i {
+    /* Estilo para el icono */
+    margin-right: 0px;
+    font-size: 1.5rem;
+}
 #inicio{
-    background-color: black;
+    background-color: linear-gradient(to right, rgba(2, 32, 65, 1), rgba(255, 255, 255, 1));
 }
