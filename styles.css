@@ -40,6 +40,28 @@ body {
     text-rendering: optimizeLegibility;
 
 }
+/*Header*/
+header{
+    background: linear-gradient(to right, rgba(2, 32, 65, 1), rgba(255, 255, 255, 0.5));
+}
+#inicio{
+    display: grid;
+    grid-template: repeat(autofit);
+    text-align: center;
+
+}
+#logo{
+    width: 25%;
+    max-width: 100px;
+    min-width: 50px;
+    margin: 0 auto;
+}
+#titulo{
+    width: 70%;
+    max-width: 300px;
+    min-width: 200px;
+    margin: 0 auto;
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair', serif;
     margin-bottom: 0.5rem;
@@ -104,5 +126,5 @@ ul{
     font-size: 1.5rem;
 }
 #inicio{
-    background: linear-gradient(to right, rgba(2, 32, 65, 1), rgba(255, 255, 255, 0.39));
+    
 }
