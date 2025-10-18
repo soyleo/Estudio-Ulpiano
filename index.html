@@ -31,28 +31,28 @@
         </a>
     </header>
     <nav aria-label="Menú de navegación principal">
-        <ul>
-            <li>
-                <a href="#inicio">Inicio</a>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a class="nav-link" href="#inicio">Inicio</a>
             </li>
-            <li>
-                <a href="#quienessomos">¿Quiénes somos?</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#quienessomos">¿Quiénes somos?</a>
             </li>
-            <li>
-                <a href="#mision">Misión</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#mision">Misión</a>
             </li>
-            <li>
-                <a href="#vision">Visión</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#vision">Visión</a>
             </li>
-            
-            <li>
-                <a href="#nosotros">Nosotros</a>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#nosotros">Nosotros</a>
             </li>
-            <li>
-                <a href="#areadepractica">Áreas de Práctica y Especialización</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#areadepractica">Áreas de Práctica y Especialización</a>
             </li>
-            <li>
-                <a href="#contacto">Contacto</a>
+            <li class="nav-item">
+                <a class="nav-link" href="#contacto">Contacto</a>
             </li>
         </ul>
     </nav>
@@ -208,7 +208,7 @@
             <div>
                 <h3>Asesoramiento Empresarial (Integral)</h3>
                 <p>Este servicio está diseñado para clientes que requieren una cobertura legal continua. Actuamos como el departamento legal externo de su empresa, ofreciendo un asesoramiento preventivo y estratégico que abarca el Derecho Comercial, Laboral, Administrativo y Civil.</p>
-                <ul>
+                <ul class="checklist">
                     <li>Mantenimiento legal de sociedades (Libros, Actas, IGJ).</li>
                     <li>Auditorías de cumplimiento normativo (Compliance).</li>
                     <li>Soporte permanente en RR.HH. y Conflictos Laborales.</li>
@@ -233,13 +233,13 @@
                 <h3>Formulario de Contacto</h3>
                 <form action="https://formsubmit.co/estudiojuridicoulpiano@gmail.com" method="post">
                     <label for="nombre">Nombre y Apellido</label>
-                    <input type="text" name="name" id="nombre" placeholder="Nombre y Apellido" required>
+                    <input type="text" name="name" id="nombre" placeholder="Nombre y Apellido" required autocomplete="on">
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="your@email.com" required>
+                    <input type="email" name="email" id="email" placeholder="your@email.com" required autocomplete="on">
                     <label for="telefono">Teléfono de contacto</label>
                     <input type="tel" id="telefono" name="telefono" placeholder="2646123456" aria-describedby="telefono-ayuda">
                     <small id="telefono-ayuda">Ingrese su número con el código de area sin el 0 y sin el 15 del inicio del mismo.</small>
-                    <label for="consulta">Consulta</label>
+                    <label for="message">Consulta</label>
                     <textarea name="message" id="message" placeholder="Ingrese su consulta aquí" required></textarea>
                     <button type="submit">Enviar</button>
                 </form>
