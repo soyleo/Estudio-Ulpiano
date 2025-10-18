@@ -41,7 +41,7 @@ body {
 
 }
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Bodoni Moda', serif;
+    font-family: 'Playfair', serif;
     margin-bottom: 0.5rem;
     color: var(--color-acento); /* Color de acento para los títulos */
 }
