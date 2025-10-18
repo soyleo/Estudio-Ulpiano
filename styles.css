@@ -43,11 +43,15 @@ body {
 /*Header*/
 header{
     background: linear-gradient(to right, rgba(2, 32, 65, 1), rgba(255, 255, 255, 0.5));
+    text-align: center;
 }
 #inicio{
-    display: grid;
-    grid-template: repeat(autofit);
-    text-align: center;
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
 
 }
 #logo{
