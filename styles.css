@@ -17,7 +17,7 @@
   
   /* Colores neutrales (escala de grises) */
   --gris-claro: #f8f9fa;
-  --gris-medio: #adb5bd;
+  --gris-medio: #adb5bde7;
   --gris-oscuro: #495057;
 }
 *{
@@ -76,6 +76,7 @@ nav{
     background-color: var(--color-fondo-principal);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     text-align: center;
+    z-index: 1000;
 }
 .nav-list{
     display: inline-block;
@@ -93,10 +94,31 @@ nav{
     font-weight: 900;
     font-size: 1.15rem;
 }
+.section-card{
+    background-color: var(--color-fondo-principal);
+    padding: 20px;
+    margin: 15px 20px;
+    border-radius: 5px;
+    position: relative;
+}
+.section-card::after{
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: var(--gris-medio);
+    width: 85%;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair', serif;
     margin-bottom: 0.5rem;
-    color: var(--color-acento); /* Color de acento para los títulos */
+    color: var(--color-acento);
+    text-align: center; /* Color de acento para los títulos */
 }
 h2{
     font-size: 2rem;
