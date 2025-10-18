@@ -77,6 +77,8 @@ nav{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
     text-align: center;
     z-index: 1000;
+    min-height: 0.15vh;
+    padding: 10px 5px;
 }
 .nav-list{
     display: inline-block;
@@ -114,6 +116,42 @@ nav{
     right: 0;
     
 }
+.section-card>p{
+    text-align: justify;
+}
+.card-nosotros{
+    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+.card-persona{
+    background-color: var(--color-fondo-secundario);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    z-index: 0;
+}
+.imagen-persona{
+    filter: grayscale(100%);
+    transition: filter 0.3s;
+    width: 50%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.card-persona:hover{
+    transform: scale(1.125);
+    box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.3);
+    filter: grayscale(0%);
+    z-index: 2;
+}
+.card-persona:hover .imagen-persona{
+    filter: grayscale(0%);
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair', serif;
     margin-bottom: 0.5rem;
@@ -124,6 +162,14 @@ h2{
     font-size: 2rem;
     margin-bottom: 1rem;
     font-weight: bold
+}
+h3{
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+h4{
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
 }
 a{
     text-decoration: none;
@@ -177,7 +223,4 @@ ul{
     /* Estilo para el icono */
     margin-right: 0px;
     font-size: 1.5rem;
-}
-#inicio{
-    
 }
