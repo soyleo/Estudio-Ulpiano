@@ -152,6 +152,9 @@ nav{
 .card-persona:hover .imagen-persona{
     filter: grayscale(0%);
 }
+#inicio, #quienessomos, #mision, #vision, #nosotros, #areadepractica, #contacto{
+    scroll-margin-top: 50vh; /* Ajusta este valor según la altura de tu nav */
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair', serif;
     margin-bottom: 0.5rem;
