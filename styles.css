@@ -169,6 +169,7 @@ nav{
     padding: 15px;
     margin-bottom: 20px;
     position: relative;
+    text-align: justify;
 }
 @media (min-width: 768px) {
     .card-servicio:not(:nth-child(2n), :last-child)::after { 
