@@ -196,6 +196,112 @@ nav{
         background-color: var(--gris-medio);
     }
 }
+.section-card#contacto {
+    /* Usamos Grid en el contenedor principal para estructurar la sección */
+    display: grid;
+    gap: 30px; /* Espacio entre las áreas grandes */
+    padding: 40px 20px;
+    
+    /* Definición de las 4 áreas principales */
+    grid-template-areas: 
+        "header header" 
+        "contenido mapa";
+        
+    /* Definición de las columnas: dos columnas con el mínimo de 350px */
+    grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr);
+}
+
+/* Asignación de Áreas a los Elementos */
+.section-card#contacto > h2 { 
+    /* El h2 se posiciona en el área 'header' */
+    grid-area: header;
+    text-align: center;
+    margin-bottom: 0.5em; /* Añade un pequeño margen inferior */
+}
+
+.mensaje-contacto {
+    /* El mensaje contacto se centra al mismo tiempo que el h2 */
+    grid-area: header; /* Se superpone con h2 en la misma área 'header' */
+    text-align: center;
+    max-width: 800px; /* Limita el ancho del texto en pantallas grandes */
+    margin: 0 auto 30px auto; /* Centra el mensaje y lo separa del contenido inferior */
+}
+
+/* El contenido del Formulario y la Info ocupan la izquierda */
+.info-form {
+    grid-area: contenido;
+    display: flex; /* Usamos flex para ordenar la info y el form */
+    flex-direction: column;
+}
+
+/* El mapa ocupa la derecha */
+.map {
+    grid-area: mapa;
+    min-height: 400px; /* Le da altura al mapa para que se vea */
+}
+
+/* ========================================================= */
+/* 2. MEDIA QUERY (Móvil/Colapso) */
+/* ========================================================= */
+
+@media (max-width: 770px) { /* El quiebre ocurre antes de que 350px + 350px quepan */
+    .section-card#contacto {
+        /* Redefinimos las áreas para que se apilen verticalmente */
+        grid-template-areas: 
+            "header" 
+            "contenido"
+            "mapa";
+            
+        /* Redefinimos las columnas a una sola (100% de ancho) */
+        grid-template-columns: 1fr;
+    }
+
+    .mensaje-contacto {
+        /* Ajuste de margen en móvil */
+        margin-bottom: 20px;
+    }
+}
+
+
+/* ========================================================= */
+/* 3. ESTILOS DEL FORMULARIO PROLIJO Y RESPONSIVE */
+/* ========================================================= */
+
+.formulario {
+    display: grid;
+    /* Divide el formulario en dos columnas en desktop, una en mobile */
+    grid-template-columns: 1fr 1fr; 
+    gap: 15px; /* Espacio entre los campos */
+}
+
+/* Asegura que los campos de una sola columna (mensaje y botón) ocupen todo el ancho */
+.formulario div:nth-last-child(2), /* Área de Consulta */
+.formulario button {
+    grid-column: 1 / -1; 
+}
+
+/* Estilos de los campos de texto y textarea (responsive por defecto con 100%) */
+.formulario input, 
+.formulario textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* 4. SOLUCIÓN AL SMALL DEL TELÉFONO */
+/* El contenedor div.form-telefono tiene un input y un small */
+.form-telefono {
+    display: flex;
+    flex-direction: column; /* Apila el input y el small */
+    gap: 5px; /* Espacio mínimo entre el input y el small */
+}
+
+.form-telefono small {
+    display: block; /* Asegura que la ayuda ocupe su propia línea */
+    font-size: 0.8em;
+    margin-top: 0;
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair', serif;
     margin-bottom: 0.5rem;
@@ -267,4 +373,50 @@ ul{
     /* Estilo para el icono */
     margin-right: 0px;
     font-size: 1.5rem;
+}
+.boton-formulario {
+    /* 1. Apariencia Base */
+    display: inline-block;
+    padding: 12px 25px; /* Espaciado interno: más alto y ancho */
+    font-size: 1.1em;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    
+    /* 2. Colores y Borde */
+    background-color: var(--color-secundario); /* Color primario (azul) */
+    color: var(--color-fondo-principal); /* Texto blanco para alto contraste */
+    border: 2px solid var(--color-secundario); /* Borde que coincide con el fondo */
+    border-radius: 6px; /* Bordes ligeramente redondeados */
+    
+    /* 3. Transición */
+    /* Asegura que todos los cambios de color y sombra sean suaves */
+    transition: all 0.3s ease; 
+    
+    /* 4. Tipografía y Alineación (dentro de la celda del Grid) */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    
+    /* 5. Asegurar ancho total en móvil si es necesario */
+    width: 100%; 
+}
+
+/* 6. Efecto Hover (Interacción) */
+.boton-formulario:hover {
+    /* Invertir colores o hacer un ligero oscurecimiento */
+    background-color: var(--color-acento); /* Fondo transparente o muy claro */
+    color: var(--color-fondo-principal); /* El texto toma el color primario */
+    border-color: var(--color-acento);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para indicar elevación */
+}
+
+/* 7. Efecto Active (Feedback al presionar) */
+.boton-formulario:active {
+    /* Efecto para cuando el usuario hace clic */
+    transform: translateY(1px); /* Ligero hundimiento */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+footer{
+    padding: 10px 10px;
+    text-align: center;
 }

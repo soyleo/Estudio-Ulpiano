@@ -228,34 +228,48 @@
         </section>
         <section class="section-card" id="contacto">
             <h2>Contacto</h2>
-            <div>
-                <p>Si necesitas asesoramiento legal, no dudes en contactarnos.</p>
-                <p><strong>Dirección:</strong> Laprida Este 480, San Juan, San Juan, Argentina</p>
-                <p><strong>Teléfono:</strong> +54 9 264 662-2007 <a 
-                    href="https://wa.me/5492646622007?text=Hola,%20quisiera%20una%20consulta%20legal%20con%20el%20Estudio%20Ulpiano." 
-                    target="_blank" 
-                    class="whatsapp-button"
-                    aria-label="Abrir chat de WhatsApp para consultas legales"
-                >
-                    <i class="fab fa-whatsapp"></i>
-                </a></p>
-                <p><strong>E-mail:</strong> estudiojuridicoulpiano@gmail.com</p>
-                <h3>Formulario de Contacto</h3>
-                <form action="https://formsubmit.co/estudiojuridicoulpiano@gmail.com" method="post">
-                    <label for="nombre">Nombre y Apellido</label>
-                    <input type="text" name="name" id="nombre" placeholder="Nombre y Apellido" required autocomplete="on">
-                    <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="your@email.com" required autocomplete="on">
-                    <label for="telefono">Teléfono de contacto</label>
-                    <input type="tel" id="telefono" name="telefono" placeholder="2646123456" aria-describedby="telefono-ayuda">
-                    <small id="telefono-ayuda">Ingrese su número con el código de area sin el 0 y sin el 15 del inicio del mismo.</small>
-                    <label for="message">Consulta</label>
-                    <textarea name="message" id="message" placeholder="Ingrese su consulta aquí" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
+            <div class="contact-container">
+                <p class="mensaje-contacto">Si necesitas asesoramiento legal, no dudes en contactarnos.</p>
+                <div class="info-form">
+                    <div class="info">
+                        <p><strong>Dirección:</strong> Laprida Este 480, San Juan, San Juan, Argentina</p>
+                        <p><strong>Teléfono:</strong> +54 9 264 662-2007 <a 
+                        href="https://wa.me/5492646622007?text=Hola,%20quisiera%20una%20consulta%20legal%20con%20el%20Estudio%20Ulpiano." 
+                        target="_blank" 
+                        class="whatsapp-button"
+                        aria-label="Abrir chat de WhatsApp para consultas legales"
+                        >
+                            <i class="fab fa-whatsapp"></i>
+                        </a></p>
+                        <p><strong>E-mail:</strong> estudiojuridicoulpiano@gmail.com</p>
+                    </div>
+                    <h3>Formulario de Contacto</h3>
+                    <form class="formulario" action="https://formsubmit.co/estudiojuridicoulpiano@gmail.com" method="post">
+                        <div>
+                            <label for="nombre">Nombre y Apellido</label>
+                            <input type="text" name="name" id="nombre" placeholder="Nombre y Apellido" required autocomplete="on">
+                        </div>                    
+                        <div>
+                            <label for="email">E-mail</label>
+                            <input type="email" name="email" id="email" placeholder="your@email.com" required autocomplete="on">
+                        </div>
+                        <div>
+                            <label for="telefono">Teléfono de contacto</label>
+                            <div class="form-telefono">
+                                <input type="tel" id="telefono" name="telefono" placeholder="2646123456" aria-describedby="telefono-ayuda">
+                                <small id="telefono-ayuda">Ingrese su número con el código de area sin el 0 y sin el 15 del inicio del mismo.</small>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="message">Consulta</label>
+                            <textarea name="message" id="message" placeholder="Ingrese su consulta aquí" required></textarea>
+                        </div>
+                        <button class="boton-formulario" type="submit">Enviar</button>
+                    </form>
+                </div>
             </div>
-            <div>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d212.53800228503667!2d-68.5191133149997!3d-31.53492372766682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1760749418202!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3400.614968320336!2d-68.52201712532192!3d-31.534733401980812!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96816a8371f3cb79%3A0xf216da7d6f859c4f!2sFrancisco%20N.%20Laprida%20Este%20480%2C%20J5402DIJ%20San%20Juan!5e0!3m2!1ses!2sar!4v1760850573647!5m2!1ses!2sar" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </section>
     </main>
