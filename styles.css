@@ -225,6 +225,7 @@ nav{
     text-align: center;
     max-width: 800px; /* Limita el ancho del texto en pantallas grandes */
     margin: 0 auto 30px auto; /* Centra el mensaje y lo separa del contenido inferior */
+    font-style: italic;
 }
 
 /* El contenido del Formulario y la Info ocupan la izquierda */
