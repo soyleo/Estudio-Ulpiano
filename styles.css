@@ -153,7 +153,47 @@ nav{
     filter: grayscale(0%);
 }
 #inicio, #quienessomos, #mision, #vision, #nosotros, #areadepractica, #contacto{
-    scroll-margin-top: 50vh; /* Ajusta este valor según la altura de tu nav */
+    scroll-margin-top: 30vh; /* Ajusta este valor según la altura de tu nav */
+}
+.container-servicios{
+    display: grid;
+    position: relative;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 8px;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.card-servicio{
+    background-color: var(--color-fondo-principal);
+    padding: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+@media (min-width: 768px) {
+    .card-servicio:not(:nth-child(2n), :last-child)::after { 
+    content: '';
+    position: absolute;
+    /* Coloca la línea en el lado derecho del ítem */
+    right: -5px; /* Mitad del valor de 'gap', para que se centre en el espacio */
+    top: 10%;
+    height: 80%; /* Para que no ocupe todo el alto */
+    width: 1px; /* Grosor de la línea */
+    background-color: var(--gris-medio);
+    }
+}
+@media (min-width: 1024px) {
+
+    .card-servicio:not(:nth-child(3n), :last-child)::after { 
+        content: '';
+        position: absolute;
+        /* Coloca la línea en el lado derecho del ítem */
+        right: -5px; /* Mitad del valor de 'gap', para que se centre en el espacio */
+        top: 10%;
+        height: 80%; /* Para que no ocupe todo el alto */
+        width: 1px; /* Grosor de la línea */
+        background-color: var(--gris-medio);
+    }
 }
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair', serif;
