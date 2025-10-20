@@ -1,21 +1,12 @@
 :root {
-  /* Colores primarios de la marca */
+ 
   --color-primario: #024d9c;
   --color-secundario: #f5f5f5;
   --color-acento: #b18502;
-  
-  
-  
-  /* Colores de texto y fondo */
-  --color-texto-oscuro: #212529; /* (Se usaría para textos en fondos claros) */
-  --color-texto-claro: #f8f9fa;  /* Usaremos este en el fondo azul oscuro */
-  
-  /* 🎨 ¡Fondo principal actualizado a AZUL OSCURO! 🎨 */
-  --color-fondo-principal: #022041; /* Azul medianoche o similar */
-  
-  --color-fondo-secundario: #2e4063; /* Un azul un poco más claro para contraste */
-  
-  /* Colores neutrales (escala de grises) */
+  --color-texto-oscuro: #212529; 
+  --color-texto-claro: #f8f9fa; 
+  --color-fondo-principal: #022041;
+  --color-fondo-secundario: #2e4063; 
   --gris-claro: #f8f9fa;
   --gris-medio: #adb5bde7;
   --gris-oscuro: #495057;
@@ -29,21 +20,16 @@ html {
     scroll-behavior: smooth;
 }
 body {
-  /* Aplicamos el azul oscuro */
     background-color: var(--color-fondo-principal); 
-  
-  /* El color del texto debe ser claro para que contraste */
     color: var(--color-texto-claro); 
     font-family: 'Roboto', sans-serif;
     line-height: 1.7;
     font-size: 1rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* NUEVO: Ajuste de texto más legible */
     text-rendering: optimizeLegibility;
 
 }
-/*Header*/
 header{
     background: linear-gradient(to right, rgba(2, 32, 65, 1), rgba(255, 255, 255, 0.5));
     text-align: center;
@@ -69,7 +55,6 @@ header{
     min-width: 200px;
     margin: 0 auto;
 }
-/* Nav*/
 nav{
     position: sticky;
     top: 0;
@@ -153,7 +138,7 @@ nav{
     filter: grayscale(0%);
 }
 #inicio, #quienessomos, #mision, #vision, #nosotros, #areadepractica, #contacto{
-    scroll-margin-top: 30vh; /* Ajusta este valor según la altura de tu nav */
+    scroll-margin-top: 30vh;
 }
 .container-servicios{
     display: grid;
@@ -175,11 +160,10 @@ nav{
     .card-servicio:not(:nth-child(2n), :last-child)::after { 
     content: '';
     position: absolute;
-    /* Coloca la línea en el lado derecho del ítem */
-    right: -5px; /* Mitad del valor de 'gap', para que se centre en el espacio */
+    right: -5px;
     top: 10%;
-    height: 80%; /* Para que no ocupe todo el alto */
-    width: 1px; /* Grosor de la línea */
+    height: 80%; 
+    width: 1px; 
     background-color: var(--gris-medio);
     }
 }
@@ -188,100 +172,73 @@ nav{
     .card-servicio:not(:nth-child(4n), :last-child)::after { 
         content: '';
         position: absolute;
-        /* Coloca la línea en el lado derecho del ítem */
-        right: -5px; /* Mitad del valor de 'gap', para que se centre en el espacio */
+        right: -5px; 
         top: 10%;
-        height: 80%; /* Para que no ocupe todo el alto */
-        width: 1px; /* Grosor de la línea */
+        height: 80%;
+        width: 1px;
         background-color: var(--gris-medio);
     }
 }
 .section-card#contacto {
-    /* Usamos Grid en el contenedor principal para estructurar la sección */
     display: grid;
-    gap: 30px; /* Espacio entre las áreas grandes */
+    gap: 30px;
     padding: 40px 20px;
-    
-    /* Definición de las 4 áreas principales */
     grid-template-areas: 
         "header header" 
         "contenido mapa";
-        
-    /* Definición de las columnas: dos columnas con el mínimo de 350px */
     grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr);
 }
 
-/* Asignación de Áreas a los Elementos */
 .section-card#contacto > h2 { 
-    /* El h2 se posiciona en el área 'header' */
     grid-area: header;
     text-align: center;
-    margin-bottom: 0.5em; /* Añade un pequeño margen inferior */
+    margin-bottom: 0.5em; 
 }
 
 .mensaje-contacto {
-    /* El mensaje contacto se centra al mismo tiempo que el h2 */
-    grid-area: header; /* Se superpone con h2 en la misma área 'header' */
+    grid-area: header; 
     text-align: center;
-    max-width: 800px; /* Limita el ancho del texto en pantallas grandes */
-    margin: 0 auto 30px auto; /* Centra el mensaje y lo separa del contenido inferior */
+    max-width: 800px;
+    margin: 0 auto 30px auto;
     font-style: italic;
 }
 
-/* El contenido del Formulario y la Info ocupan la izquierda */
 .info-form {
     grid-area: contenido;
-    display: flex; /* Usamos flex para ordenar la info y el form */
+    display: flex; 
     flex-direction: column;
 }
 
-/* El mapa ocupa la derecha */
 .map {
     grid-area: mapa;
-    min-height: 400px; /* Le da altura al mapa para que se vea */
+    min-height: 400px; 
 }
 
-/* ========================================================= */
-/* 2. MEDIA QUERY (Móvil/Colapso) */
-/* ========================================================= */
-
-@media (max-width: 770px) { /* El quiebre ocurre antes de que 350px + 350px quepan */
+@media (max-width: 770px) { 
     .section-card#contacto {
-        /* Redefinimos las áreas para que se apilen verticalmente */
         grid-template-areas: 
             "header" 
             "contenido"
             "mapa";
-            
-        /* Redefinimos las columnas a una sola (100% de ancho) */
         grid-template-columns: 1fr;
     }
 
     .mensaje-contacto {
-        /* Ajuste de margen en móvil */
         margin-bottom: 20px;
     }
 }
 
-
-/* ========================================================= */
-/* 3. ESTILOS DEL FORMULARIO PROLIJO Y RESPONSIVE */
-/* ========================================================= */
-
 .formulario {
     display: grid;
-    /* Divide el formulario en dos columnas en desktop, una en mobile */
     grid-template-columns: 1fr 1fr; 
-    gap: 15px; /* Espacio entre los campos */
+    gap: 15px; 
 }
 
-/* Asegura que los campos de una sola columna (mensaje y botón) ocupen todo el ancho */
-.formulario div:nth-last-child(2), /* Área de Consulta */
+.formulario div:nth-last-child(2), 
 .formulario button {
     grid-column: 1 / -1; 
 }
 
-/* Estilos de los campos de texto y textarea (responsive por defecto con 100%) */
 .formulario input, 
 .formulario textarea {
     width: 100%;
@@ -289,17 +246,14 @@ nav{
     border: 1px solid #ccc;
     border-radius: 4px;
 }
-
-/* 4. SOLUCIÓN AL SMALL DEL TELÉFONO */
-/* El contenedor div.form-telefono tiene un input y un small */
 .form-telefono {
     display: flex;
-    flex-direction: column; /* Apila el input y el small */
-    gap: 5px; /* Espacio mínimo entre el input y el small */
+    flex-direction: column; 
+    gap: 5px; 
 }
 
 .form-telefono small {
-    display: block; /* Asegura que la ayuda ocupe su propia línea */
+    display: block; 
     font-size: 0.8em;
     margin-top: 0;
 }
@@ -307,7 +261,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair', serif;
     margin-bottom: 0.5rem;
     color: var(--color-acento);
-    text-align: center; /* Color de acento para los títulos */
+    text-align: center; 
 }
 h2{
     font-size: 2rem;
@@ -352,69 +306,53 @@ ul{
     justify-content: center;
     padding: 5px 5px;
     
-    /* Color de Acento Dorado (o verde WhatsApp: #25D366) */
+    
     background-color: var(--color-secundario); 
     
-    color: var(--color-fondo-principal); /* El texto será blanco o blanco roto */
+    color: var(--color-fondo-principal); 
     font-weight: 600;
     text-decoration: none;
-    border-radius: 50%; /* Bordes redondeados para modernidad */
+    border-radius: 50%; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 .whatsapp-button:hover {
-    /* Oscurecer el dorado o el verde al pasar el mouse */
     background-color: #A38445; 
     transform: translateY(-2px);
 }
 
 .whatsapp-button i {
-    /* Estilo para el icono */
     margin-right: 0px;
     font-size: 1.5rem;
 }
 .boton-formulario {
-    /* 1. Apariencia Base */
     display: inline-block;
-    padding: 12px 25px; /* Espaciado interno: más alto y ancho */
+    padding: 12px 25px;
     font-size: 1.1em;
     font-weight: bold;
     text-align: center;
     cursor: pointer;
-    
-    /* 2. Colores y Borde */
-    background-color: var(--color-secundario); /* Color primario (azul) */
-    color: var(--color-fondo-principal); /* Texto blanco para alto contraste */
-    border: 2px solid var(--color-secundario); /* Borde que coincide con el fondo */
-    border-radius: 6px; /* Bordes ligeramente redondeados */
-    
-    /* 3. Transición */
-    /* Asegura que todos los cambios de color y sombra sean suaves */
+    background-color: var(--color-secundario); 
+    color: var(--color-fondo-principal); 
+    border: 2px solid var(--color-secundario); 
+    border-radius: 6px; 
     transition: all 0.3s ease; 
-    
-    /* 4. Tipografía y Alineación (dentro de la celda del Grid) */
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    
-    /* 5. Asegurar ancho total en móvil si es necesario */
     width: 100%; 
 }
 
-/* 6. Efecto Hover (Interacción) */
 .boton-formulario:hover {
-    /* Invertir colores o hacer un ligero oscurecimiento */
-    background-color: var(--color-acento); /* Fondo transparente o muy claro */
-    color: var(--color-fondo-principal); /* El texto toma el color primario */
+    background-color: var(--color-acento); 
+    color: var(--color-fondo-principal); 
     border-color: var(--color-acento);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para indicar elevación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-/* 7. Efecto Active (Feedback al presionar) */
 .boton-formulario:active {
-    /* Efecto para cuando el usuario hace clic */
-    transform: translateY(1px); /* Ligero hundimiento */
+    transform: translateY(1px); 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 footer{
