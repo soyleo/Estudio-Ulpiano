@@ -2,11 +2,11 @@
  
   --color-primario: #024d9c;
   --color-secundario: #f5f5f5;
-  --color-acento: #b18502;
+  --color-acento: #daaf2f;
   --color-texto-oscuro: #212529; 
   --color-texto-claro: #f8f9fa; 
-  --color-fondo-principal: #022041;
-  --color-fondo-secundario: #2e4063; 
+  --color-fondo-principal: #2a3b4f;
+  --color-fondo-secundario: #4f6681; 
   --gris-claro: #f8f9fa;
   --gris-medio: #adb5bde7;
   --gris-oscuro: #495057;
@@ -31,7 +31,7 @@ body {
 
 }
 header{
-    background: linear-gradient(to right, rgba(2, 32, 65, 1), rgba(255, 255, 255, 0.5));
+    background: linear-gradient(to right, rgba(42, 59, 79, 1), rgba(255, 255, 255, 0.5));
     text-align: center;
 }
 #inicio{
