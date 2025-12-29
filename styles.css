@@ -156,7 +156,7 @@ nav{
     position: relative;
     text-align: justify;
 }
-@media (min-width: 768px) {
+@media (min-width: 688px) and (max-width: 995px) {
     .card-servicio:not(:nth-child(2n), :last-child)::after { 
     content: '';
     position: absolute;
@@ -167,7 +167,20 @@ nav{
     background-color: var(--gris-medio);
     }
 }
-@media (min-width: 1024px) {
+@media (min-width: 996px) and (max-width: 1303px) {
+
+    .card-servicio:not(:nth-child(3n), :last-child)::after { 
+        content: '';
+        position: absolute;
+        right: -5px; 
+        top: 10%;
+        height: 80%;
+        width: 1px;
+        background-color: var(--gris-medio);
+    }
+}
+
+@media (min-width: 1304px) and (max-width: 1611px) {
 
     .card-servicio:not(:nth-child(4n), :last-child)::after { 
         content: '';
@@ -179,6 +192,45 @@ nav{
         background-color: var(--gris-medio);
     }
 }
+
+@media (min-width: 1612px) and (max-width: 1919px) {
+
+    .card-servicio:not(:nth-child(5n), :last-child)::after { 
+        content: '';
+        position: absolute;
+        right: -5px; 
+        top: 10%;
+        height: 80%;
+        width: 1px;
+        background-color: var(--gris-medio);
+    }
+}
+@media (min-width: 1920px) and (max-width: 2227px) {
+
+    .card-servicio:not(:nth-child(6n), :last-child)::after { 
+        content: '';
+        position: absolute;
+        right: -5px; 
+        top: 10%;
+        height: 80%;
+        width: 1px;
+        background-color: var(--gris-medio);
+    }
+}
+@media (min-width: 2228px) and (max-width: 2535px) {
+
+    .card-servicio:not(:last-child)::after { 
+        content: '';
+        position: absolute;
+        right: -5px; 
+        top: 10%;
+        height: 80%;
+        width: 1px;
+        background-color: var(--gris-medio);
+    }
+}
+
+
 .section-card#contacto {
     display: grid;
     gap: 30px;
@@ -358,4 +410,31 @@ ul{
 footer{
     padding: 10px 10px;
     text-align: center;
+}
+.nav-logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;                 /* No ocupa espacio inicial */
+    opacity: 0;               /* Invisible */
+    transform: translateY(-20px); /* Viene desde arriba */
+    transition: 
+        width 0.5s ease,      /* Animación de "empuje" */
+        opacity 0.5s ease,    /* Animación de fundido */
+        transform 0.5s ease,  /* Animación de caída */
+        margin 0.5s ease;     /* Suaviza el espacio entre logo y links */
+    overflow: hidden;
+}
+nav.scrolled .nav-logo {
+    width: 50px;              /* Toma su tamaño y empuja el menú */
+    opacity: 1;               /* Se hace visible */
+    transform: translateY(0);  /* Llega a su posición final */
+    margin-right: 15px;
+}
+nav.scrolled {
+    background-color: rgba(var(--color-fondo-principal), 0.95);
+    backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado (moderno) */
+    padding: 5px 5px; /* Se hace un poco más delgada */
+}
+.nav-item:first-child {
+    margin-left: 0;
 }
