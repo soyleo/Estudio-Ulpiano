@@ -1,475 +1,504 @@
 :root {
- 
   --color-primario: #024d9c;
   --color-secundario: #f5f5f5;
   --color-acento: #daaf2f;
-  --color-texto-oscuro: #212529; 
-  --color-texto-claro: #f8f9fa; 
+  --color-texto-oscuro: #212529;
+  --color-texto-claro: #f8f9fa;
   --color-fondo-principal: #2a3b4f;
-  --color-fondo-secundario: #4f6681; 
+  --color-fondo-secundario: #4f6681;
   --gris-claro: #f8f9fa;
   --gris-medio: #adb5bde7;
   --gris-oscuro: #495057;
 }
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 body {
-    /* Tu configuración original */
-    background-color: var(--color-fondo-principal); 
-    color: var(--color-texto-claro); 
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.7;
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+  /* Tu configuración original */
+  background-color: var(--color-fondo-principal);
+  color: var(--color-texto-claro);
+  font-family: "Roboto", sans-serif;
+  line-height: 1.7;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 
-    /* Configuración necesaria para la marca de agua */
-    margin: 0;
-    min-height: 100vh;
-    position: relative; /* Permite que el pseudo-elemento se posicione respecto al body */
+  /* Configuración necesaria para la marca de agua */
+  margin: 0;
+  min-height: 100vh;
+  position: relative; /* Permite que el pseudo-elemento se posicione respecto al body */
 }
 
 body::before {
-    content: "";
-    /* Fija el logo para que no se mueva al hacer scroll */
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    /* Configuración de la imagen */
-    background-image: url('IMG/Logo Blanco.png'); /* REEMPLAZA CON TU RUTA */
-    background-position: center;
-    background-repeat: no-repeat;
-    
-    /* Responsive: el logo ocupará el 40% del ancho en pantallas grandes */
-    background-size: 40%; 
-    
-    /* Opacidad ajustable: 0.0 es invisible, 1.0 es sólido */
-    opacity: 0.1; 
-    
-    /* Capas y comportamiento */
-    z-index: -1;          /* Lo coloca detrás del texto */
-    pointer-events: none; /* Permite hacer clic en botones/links a través del logo */
+  content: "";
+  /* Fija el logo para que no se mueva al hacer scroll */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Configuración de la imagen */
+  background-image: url("IMG/Logo Blanco.png"); /* REEMPLAZA CON TU RUTA */
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* Responsive: el logo ocupará el 40% del ancho en pantallas grandes */
+  background-size: 40%;
+
+  /* Opacidad ajustable: 0.0 es invisible, 1.0 es sólido */
+  opacity: 0.1;
+
+  /* Capas y comportamiento */
+  z-index: -1; /* Lo coloca detrás del texto */
+  pointer-events: none; /* Permite hacer clic en botones/links a través del logo */
 }
 
 /* Ajuste para que el logo se vea mejor en celulares */
 @media (max-width: 768px) {
-    body::before {
-        background-size: 70%; /* Más grande en móviles para que se aprecie */
-    }
+  body::before {
+    background-size: 70%; /* Más grande en móviles para que se aprecie */
+  }
 }
-header{
-    background: linear-gradient(to right, rgba(42, 59, 79, 1), rgba(255, 255, 255, 0.5));
-    text-align: center;
+header {
+  background: linear-gradient(
+    to right,
+    rgba(42, 59, 79, 1),
+    rgba(255, 255, 255, 0.5)
+  );
+  text-align: center;
 }
-#inicio{
-    display: inline-flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
+#inicio {
+  display: inline-flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+}
+#logo {
+  width: 25%;
+  max-width: 100px;
+  min-width: 50px;
+  margin: 0 auto;
+}
+#titulo {
+  width: 70%;
+  max-width: 300px;
+  min-width: 200px;
+  margin: 0 auto;
+}
+nav {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-fondo-principal);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  z-index: 1000;
+  min-height: 0.15vh;
+  padding: 10px 5px;
+}
+.nav-list {
+  display: inline-block;
+}
+.nav-item {
+  display: inline-block;
+  margin: 0 15px;
+  padding: 5px;
+}
+.nav-link {
+  font-weight: 500;
+}
+.nav-link:hover {
+  color: var(--color-acento);
+  font-weight: 900;
+  font-size: clamp(1.15rem, 1.8vw, 1.75rem);
+}
+.section-card {
+  padding: 20px;
+  margin: 15px 20px;
+  border-radius: 5px;
+  position: relative;
+}
+.section-card::after {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: var(--gris-medio);
+  width: 85%;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.section-card > p {
+  text-align: justify;
+}
+.card-nosotros {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+.card-persona {
+  background-color: var(--color-fondo-secundario);
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 0;
+}
+.imagen-persona {
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+  width: 50%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+.card-persona:hover {
+  transform: scale(1.125);
+  box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.3);
+  filter: grayscale(0%);
+  z-index: 2;
+}
+.card-persona:hover .imagen-persona {
+  filter: grayscale(0%);
+}
+#inicio,
+#quienessomos,
+#mision,
+#vision,
+#nosotros,
+#areadepractica,
+#contacto {
+  scroll-margin-top: 30vh;
+}
+.container-servicios {
+  display: grid;
+  position: relative;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 8px;
+  margin-top: 20px;
+  justify-content: center;
+}
 
-}
-#logo{
-    width: 25%;
-    max-width: 100px;
-    min-width: 50px;
-    margin: 0 auto;
-}
-#titulo{
-    width: 70%;
-    max-width: 300px;
-    min-width: 200px;
-    margin: 0 auto;
-}
-nav{
-    position: sticky;
-    top: 0;
-    background-color: var(--color-fondo-principal);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    z-index: 1000;
-    min-height: 0.15vh;
-    padding: 10px 5px;
-}
-.nav-list{
-    display: inline-block;
-}
-.nav-item{
-    display: inline-block;
-    margin: 0 15px;
-    padding: 5px;
-}
-.nav-link{
-    font-weight: 500;
-}
-.nav-link:hover{
-    color: var(--color-acento);
-    font-weight: 900;
-    font-size: clamp(1.15rem, 1.8vw, 1.75rem);
-}
-.section-card{
-    padding: 20px;
-    margin: 15px 20px;
-    border-radius: 5px;
-    position: relative;
-}
-.section-card::after{
-    content: "";
-    display: block;
-    height: 1px;
-    background-color: var(--gris-medio);
-    width: 85%;
-    margin: 0 auto;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    
-}
-.section-card>p{
-    text-align: justify;
-}
-.card-nosotros{
-    margin-bottom: 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-}
-.card-persona{
-    background-color: var(--color-fondo-secundario);
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    margin: 0 auto;
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-    z-index: 0;
-}
-.imagen-persona{
-    filter: grayscale(100%);
-    transition: filter 0.3s;
-    width: 50%;
-    height: auto;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-.card-persona:hover{
-    transform: scale(1.125);
-    box-shadow: 0 0 8px 8px rgba(0, 0, 0, 0.3);
-    filter: grayscale(0%);
-    z-index: 2;
-}
-.card-persona:hover .imagen-persona{
-    filter: grayscale(0%);
-}
-#inicio, #quienessomos, #mision, #vision, #nosotros, #areadepractica, #contacto{
-    scroll-margin-top: 30vh;
-}
-.container-servicios{
-    display: grid;
-    position: relative;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 8px;
-    margin-top: 20px;
-    justify-content: center;
-}
-
-.card-servicio{
-    padding: 15px;
-    margin-bottom: 20px;
-    position: relative;
-    text-align: justify;
+.card-servicio {
+  padding: 15px;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: justify;
 }
 @media (min-width: 688px) and (max-width: 995px) {
-    .card-servicio:not(:nth-child(2n), :last-child)::after { 
-    content: '';
+  .card-servicio:not(:nth-child(2n), :last-child)::after {
+    content: "";
     position: absolute;
     right: -5px;
     top: 10%;
-    height: 80%; 
-    width: 1px; 
+    height: 80%;
+    width: 1px;
     background-color: var(--gris-medio);
-    }
+  }
 }
 @media (min-width: 996px) and (max-width: 1303px) {
-
-    .card-servicio:not(:nth-child(3n), :last-child)::after { 
-        content: '';
-        position: absolute;
-        right: -5px; 
-        top: 10%;
-        height: 80%;
-        width: 1px;
-        background-color: var(--gris-medio);
-    }
+  .card-servicio:not(:nth-child(3n), :last-child)::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background-color: var(--gris-medio);
+  }
 }
 
 @media (min-width: 1304px) and (max-width: 1611px) {
-
-    .card-servicio:not(:nth-child(4n), :last-child)::after { 
-        content: '';
-        position: absolute;
-        right: -5px; 
-        top: 10%;
-        height: 80%;
-        width: 1px;
-        background-color: var(--gris-medio);
-    }
+  .card-servicio:not(:nth-child(4n), :last-child)::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background-color: var(--gris-medio);
+  }
 }
 
 @media (min-width: 1612px) and (max-width: 1919px) {
-
-    .card-servicio:not(:nth-child(5n), :last-child)::after { 
-        content: '';
-        position: absolute;
-        right: -5px; 
-        top: 10%;
-        height: 80%;
-        width: 1px;
-        background-color: var(--gris-medio);
-    }
+  .card-servicio:not(:nth-child(5n), :last-child)::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background-color: var(--gris-medio);
+  }
 }
 @media (min-width: 1920px) and (max-width: 2227px) {
-
-    .card-servicio:not(:nth-child(6n), :last-child)::after { 
-        content: '';
-        position: absolute;
-        right: -5px; 
-        top: 10%;
-        height: 80%;
-        width: 1px;
-        background-color: var(--gris-medio);
-    }
+  .card-servicio:not(:nth-child(6n), :last-child)::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background-color: var(--gris-medio);
+  }
 }
 @media (min-width: 2228px) and (max-width: 2535px) {
-
-    .card-servicio:not(:last-child)::after { 
-        content: '';
-        position: absolute;
-        right: -5px; 
-        top: 10%;
-        height: 80%;
-        width: 1px;
-        background-color: var(--gris-medio);
-    }
+  .card-servicio:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    top: 10%;
+    height: 80%;
+    width: 1px;
+    background-color: var(--gris-medio);
+  }
 }
-
 
 .section-card#contacto {
-    display: grid;
-    gap: 30px;
-    padding: 40px 20px;
-    grid-template-areas: 
-        "header header" 
-        "contenido mapa";
-    grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr);
+  display: grid;
+  gap: 30px;
+  padding: 40px 20px;
+  grid-template-areas:
+    "header header"
+    "contenido mapa";
+  grid-template-columns: minmax(350px, 1fr) minmax(350px, 1fr);
 }
 
-.section-card#contacto > h2 { 
-    grid-area: header;
-    text-align: center;
-    margin-bottom: 0.5em; 
+.section-card#contacto > h2 {
+  grid-area: header;
+  text-align: center;
+  margin-bottom: 0.5em;
 }
 
 .mensaje-contacto {
-    grid-area: header; 
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    font-style: italic;
+  grid-area: header;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  font-style: italic;
 }
 
 .info-form {
-    grid-area: contenido;
-    display: flex; 
-    flex-direction: column;
+  grid-area: contenido;
+  display: flex;
+  flex-direction: column;
 }
 
 .map {
-    grid-area: mapa;
-    min-height: 400px; 
+  grid-area: mapa;
+  min-height: 400px;
 }
 
-@media (max-width: 770px) { 
-    .section-card#contacto {
-        grid-template-areas: 
-            "header" 
-            "contenido"
-            "mapa";
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 770px) {
+  .section-card#contacto {
+    grid-template-areas:
+      "header"
+      "contenido"
+      "mapa";
+    grid-template-columns: 1fr;
+  }
 
-    .mensaje-contacto {
-        margin-bottom: 20px;
-    }
+  .mensaje-contacto {
+    margin-bottom: 20px;
+  }
 }
 
 .formulario {
-    display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 15px; 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
-.formulario div:nth-last-child(2), 
+.formulario div:nth-last-child(2),
 .formulario button {
-    grid-column: 1 / -1; 
+  grid-column: 1 / -1;
 }
 
-.formulario input, 
+.formulario input,
 .formulario textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 .form-telefono {
-    display: flex;
-    flex-direction: column; 
-    gap: 5px; 
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .form-telefono small {
-    display: block; 
-    font-size: clamp(0.8rem, 1vw, 1.2rem);
-    margin-top: 0;
+  display: block;
+  font-size: clamp(0.8rem, 1vw, 1.2rem);
+  margin-top: 0;
 }
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair', serif;
-    margin-bottom: 0.5rem;
-    color: var(--color-acento);
-    text-align: center; 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair", serif;
+  margin-bottom: 0.5rem;
+  color: var(--color-acento);
+  text-align: center;
 }
-h2{
-    font-size: clamp(2rem, 3vw, 2.75rem);
-    margin-bottom: 1rem;
-    font-weight: bold
+h2 {
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
-h3{
-    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
-    margin-bottom: 0.75rem;
+h3 {
+  font-size: clamp(1.75rem, 2.5vw, 2.25rem);
+  margin-bottom: 0.75rem;
 }
-h4{
-    font-size: clamp(1.125rem, 1.8vw, 2rem);
-    margin-bottom: 0.5rem;
+h4 {
+  font-size: clamp(1.125rem, 1.8vw, 2rem);
+  margin-bottom: 0.5rem;
 }
-a{
-    text-decoration: none;
-    color: inherit;
+a {
+  text-decoration: none;
+  color: inherit;
 }
-ul{
-    list-style: none;
+ul {
+  list-style: none;
 }
-.checklist{
-    list-style: inside;
-    list-style-type: disc;
-    margin-left: 1rem;
-    margin-bottom: 1rem;
+.checklist {
+  list-style: inside;
+  list-style-type: disc;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
 }
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border-width: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 .whatsapp-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 5px;
-    
-    
-    background-color: var(--color-secundario); 
-    
-    color: var(--color-fondo-principal); 
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 50%; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 5px;
+
+  background-color: var(--color-secundario);
+
+  color: var(--color-fondo-principal);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
 }
 
 .whatsapp-button:hover {
-    background-color: #A38445; 
-    transform: translateY(-2px);
+  background-color: #a38445;
+  transform: translateY(-2px);
 }
 
 .whatsapp-button i {
-    margin-right: 0px;
-    font-size: 1.5rem;
+  margin-right: 0px;
+  font-size: 1.5rem;
 }
 .boton-formulario {
-    display: inline-block;
-    padding: 12px 25px;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-align: center;
-    cursor: pointer;
-    background-color: var(--color-secundario); 
-    color: var(--color-fondo-principal); 
-    border: 2px solid var(--color-secundario); 
-    border-radius: 6px; 
-    transition: all 0.3s ease; 
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    width: 100%; 
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  background-color: var(--color-secundario);
+  color: var(--color-fondo-principal);
+  border: 2px solid var(--color-secundario);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: 100%;
 }
 
 .boton-formulario:hover {
-    background-color: var(--color-acento); 
-    color: var(--color-fondo-principal); 
-    border-color: var(--color-acento);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: var(--color-acento);
+  color: var(--color-fondo-principal);
+  border-color: var(--color-acento);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .boton-formulario:active {
-    transform: translateY(1px); 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-footer{
-    padding: 10px 10px;
-    text-align: center;
+footer {
+  padding: 10px 10px;
+  text-align: center;
 }
 .nav-logo {
-    display: inline-block;
-    vertical-align: middle;
-    width: 0;                 /* No ocupa espacio inicial */
-    opacity: 0;               /* Invisible */
-    transform: translateY(-20px); /* Viene desde arriba */
-    transition: 
-        width 0.5s ease,      /* Animación de "empuje" */
-        opacity 0.5s ease,    /* Animación de fundido */
-        transform 0.5s ease,  /* Animación de caída */
-        margin 0.5s ease;     /* Suaviza el espacio entre logo y links */
-    overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  width: 0; /* No ocupa espacio inicial */
+  opacity: 0; /* Invisible */
+  transform: translateY(-20px); /* Viene desde arriba */
+  transition: width 0.5s ease, /* Animación de "empuje" */ opacity 0.5s ease,
+    /* Animación de fundido */ transform 0.5s ease,
+    /* Animación de caída */ margin 0.5s ease; /* Suaviza el espacio entre logo y links */
+  overflow: hidden;
 }
 nav.scrolled .nav-logo {
-    width: 50px;              /* Toma su tamaño y empuja el menú */
-    opacity: 1;               /* Se hace visible */
-    transform: translateY(0);  /* Llega a su posición final */
-    margin-right: 15px;
+  width: 50px; /* Toma su tamaño y empuja el menú */
+  opacity: 1; /* Se hace visible */
+  transform: translateY(0); /* Llega a su posición final */
+  margin-right: 15px;
 }
 nav.scrolled {
-    background-color: rgba(var(--color-fondo-principal), 0.95);
-    backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado (moderno) */
-    padding: 5px 5px; /* Se hace un poco más delgada */
+  background-color: rgba(var(--color-fondo-principal), 0.95);
+  backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado (moderno) */
+  padding: 5px 5px; /* Se hace un poco más delgada */
 }
 .nav-item:first-child {
-    margin-left: 0;
+  margin-left: 0;
+}
+/* 1. ESTADO INICIAL (Ocultos) */
+.section-card h2 {
+    opacity: 0;
+    transform: scale(0.3);
+    transform-origin: center;
+    /* Usamos 'all' para que anime opacidad y escala al mismo tiempo */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section-card p {
+    opacity: 0;
+    transform: translateY(10px); /* Un pequeño efecto de subida */
+    transition: all 1s ease-out;
+    transition-delay: 0.4s; /* Aparece después del título */
+}
+
+/* 2. ESTADO ANIMADO (Cuando aparece la clase .visible) */
+.section-card.visible h2 {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.section-card.visible p {
+    opacity: 1;
+    transform: translateY(0);
 }
