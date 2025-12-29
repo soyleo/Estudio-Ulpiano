@@ -24,7 +24,7 @@ body {
     color: var(--color-texto-claro); 
     font-family: 'Roboto', sans-serif;
     line-height: 1.7;
-    font-size: 1rem;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -79,7 +79,7 @@ nav{
 .nav-link:hover{
     color: var(--color-acento);
     font-weight: 900;
-    font-size: 1.15rem;
+    font-size: clamp(1.15rem, 1.8vw, 1.75rem);
 }
 .section-card{
     background-color: var(--color-fondo-principal);
@@ -306,7 +306,7 @@ nav{
 
 .form-telefono small {
     display: block; 
-    font-size: 0.8em;
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
     margin-top: 0;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -316,16 +316,16 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center; 
 }
 h2{
-    font-size: 2rem;
+    font-size: clamp(2rem, 3vw, 2.75rem);
     margin-bottom: 1rem;
     font-weight: bold
 }
 h3{
-    font-size: 1.75rem;
+    font-size: clamp(1.75rem, 2.5vw, 2.25rem);
     margin-bottom: 0.75rem;
 }
 h4{
-    font-size: 1.125rem;
+    font-size: clamp(1.125rem, 1.8vw, 2rem);
     margin-bottom: 0.5rem;
 }
 a{
