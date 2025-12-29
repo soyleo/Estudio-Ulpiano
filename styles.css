@@ -481,7 +481,6 @@ nav.scrolled {
     opacity: 0;
     transform: scale(0.3);
     transform-origin: center;
-    /* Usamos 'all' para que anime opacidad y escala al mismo tiempo */
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
@@ -501,4 +500,24 @@ nav.scrolled {
 .section-card.visible p {
     opacity: 1;
     transform: translateY(0);
+}
+
+.float-btn {
+  display: flex;         /* Para centrar el icono */
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  width: 90px;          /* Un poco más grande para que destaque */
+  height: 90px;
+  padding: 0;           /* Quitamos el padding para que el icono use todo el espacio */
+  border-radius: 50%;
+}
+
+/* Ajustamos específicamente el tamaño del icono dentro del botón flotante */
+.float-btn i {
+  font-size: 50px;      /* Aquí controlas qué tan grande se ve el logo */
+  margin: 0;            /* Quitamos márgenes heredados */
 }
